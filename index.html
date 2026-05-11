@@ -3,82 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt & Gruppe</title>
+  <title>Fetrat</title>
 
   <style>
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f8fafc;
+      background: #cfefff;
       color: #111827;
       text-align: center;
     }
 
     .container {
       max-width: 500px;
-      margin: 60px auto;
-      padding: 25px;
+      margin: 80px auto;
+      padding: 20px;
     }
 
     .card {
       background: white;
-      padding: 25px;
+      padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
       margin-bottom: 25px;
     }
 
     h1 {
-      font-size: 34px;
+      font-size: 42px;
+      margin-bottom: 10px;
+      color: #111827;
     }
 
     p {
       font-size: 18px;
-      color: #4b5563;
+      color: #374151;
     }
 
     button, a {
       display: block;
       width: 100%;
-      margin: 12px 0;
-      padding: 15px;
-      border-radius: 12px;
+      margin: 14px 0;
+      padding: 16px;
+      border-radius: 14px;
       border: none;
-      background: #2563eb;
+      background: #5b4636;
       color: white;
       font-size: 18px;
       font-weight: bold;
       text-decoration: none;
       cursor: pointer;
       box-sizing: border-box;
+      transition: 0.3s;
     }
 
     button:hover, a:hover {
-      background: #1d4ed8;
-    }
-
-    .green {
-      background: #16a34a;
-    }
-
-    .green:hover {
-      background: #15803d;
+      background: #6d5644;
     }
 
     .hidden {
       display: none;
     }
 
-    .price {
-      font-size: 28px;
-      font-weight: bold;
-      color: #16a34a;
-    }
-
     .small {
       font-size: 14px;
       color: #6b7280;
+      margin-top: 10px;
     }
+
   </style>
 </head>
 
@@ -87,75 +79,37 @@
   <div class="container">
 
     <div class="card">
+
       <h1>Willkommen 👋</h1>
-      <p>Wähle eine Option aus:</p>
 
-      <button onclick="showSection('kontakt')">
-        Kontakt
-      </button>
+      <p>Danke, dass du da bist.</p>
 
-      <button onclick="showSection('gruppe')">
-        Ich möchte in die Gruppe
-      </button>
-
-      <button onclick="showSection('Sozial')">
+      <button onclick="showSection('social')">
         Soziale Medien
       </button>
+
+      <button onclick="showSection('kontakt')">
+        Kontakte
+      </button>
+
+      <button onclick="showSection('spenden')">
+        Spenden
+      </button>
+
     </div>
 
     <div id="kontakt" class="card hidden">
-      <h2>Kontakt</h2>
+
+      <h2>Kontakte</h2>
 
       <p><strong>E-Mail:</strong> Fetrathazratn@gmail.com</p>
+
       <p><strong>Telefon:</strong> +49 173 7219411</p>
-      <a href="https://www.tiktok.com/@fetratdaily" target="_blank">
-        TikTok Profil öffnen
-      </a>
+
     </div>
 
-    <div id="gruppe" class="card hidden">
-      <h2>Mitglied werden</h2>
+    <div id="social" class="card hidden">
 
-      <p>Der Zugang zur Gruppe kostet:</p>
-
-      <div class="price">20 €</div>
-
-      <button class="green" onclick="showSection('zahlung')">
-        Zahlen
-      </button>
-    </div>
-
-    <div id="zahlung" class="card hidden">
-      <h2>Zahlungsoptionen</h2>
-
-      <a href="https://paypal.me/yourcentwillhelp" target="_blank">
-        Mit PayPal zahlen
-      </a>
-
-      <button class="green" onclick="showSection('bank')">
-        Banküberweisung
-      </button>
-
-      <p class="small">
-        Wähle deine Zahlungsmethode aus.
-      </p>
-    </div>
-
-    <div id="bank" class="card hidden">
-      <h2>Banküberweisung</h2>
-
-      <p><strong>Name:</strong> Sebghatullah Hazrat</p>
-      <p><strong>IBAN:</strong> DE00 0000 0000 0000 0000 00</p>
-      <p><strong>Betrag:</strong> 20 €</p>
-      <p><strong>Verwendungszweck:</strong> Datum + Name</p>
-
-      <p class="small">
-        Bitte beachte, dass es mindestens ein Werktag dauert,
-        bis das Geld auf dem Konto erscheint.
-      </p>
-    </div>
-
-    <div id="Sozial" class="card hidden">
       <h2>Soziale Medien</h2>
 
       <a href="https://instagram.com/fetrat_h_r" target="_blank">
@@ -171,23 +125,38 @@
       </a>
 
       <p class="small">
-        Folg mir für mehr Sportkontent.
+        Folge mir für mehr Content 😄
       </p>
+
+    </div>
+
+    <div id="spenden" class="card hidden">
+
+      <h2>Spenden</h2>
+
+      <a href="https://paypal.me/yourcentwillhelp" target="_blank">
+        Mit PayPal spenden
+      </a>
+
+      <p class="small">
+        Danke für deine Unterstützung ❤️
+      </p>
+
     </div>
 
   </div>
 
   <script>
+
     function showSection(id) {
 
       document.getElementById("kontakt").classList.add("hidden");
-      document.getElementById("gruppe").classList.add("hidden");
-      document.getElementById("zahlung").classList.add("hidden");
-      document.getElementById("bank").classList.add("hidden");
-      document.getElementById("Sozial").classList.add("hidden");
+      document.getElementById("social").classList.add("hidden");
+      document.getElementById("spenden").classList.add("hidden");
 
       document.getElementById(id).classList.remove("hidden");
     }
+
   </script>
 
 </body>
