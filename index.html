@@ -109,24 +109,34 @@
       <button class="green" onclick="showSection('zahlung')">Zahlen</button>
     </div>
 
-    <div id="zahlung" class="card hidden">
-      <h2>Zahlungsoptionen</h2>
-      <p>Wähle aus, wie du zahlen möchtest:</p>
+  <div id="zahlung" class="card hidden">
+  <h2>Zahlungsoptionen</h2>
 
-      <a href="https://paypal.me/DEINNAME" target="_blank">Mit PayPal zahlen</a>
+  <a href="https://paypal.me/DEINNAME" target="_blank">
+    Mit PayPal zahlen
+  </a>
 
-      <div class="card">
-        <h3>Banküberweisung</h3>
-        <p><strong>Name:</strong> Dein Name</p>
-        <p><strong>IBAN:</strong> DE00 0000 0000 0000 0000 00</p>
-        <p><strong>Betrag:</strong> 20 €</p>
-        <p><strong>Verwendungszweck:</strong> Gruppe + dein Name</p>
-      </div>
+  <button class="green" onclick="showSection('bank')">
+    Banküberweisung
+  </button>
 
-      <p class="small">
-        Nach der Zahlung bekommst du weitere Infos zur Gruppe.
-      </p>
-    </div>
+  <p class="small">
+    Wähle deine Zahlungsmethode aus.
+  </p>
+</div>
+
+<div id="bank" class="card hidden">
+  <h2>Banküberweisung</h2>
+
+  <p><strong>Name:</strong> Dein Name</p>
+  <p><strong>IBAN:</strong> DE00 0000 0000 0000 0000 00</p>
+  <p><strong>Betrag:</strong> 20 €</p>
+  <p><strong>Verwendungszweck:</strong> Gruppe + dein Name</p>
+
+  <p class="small">
+    Nach der Zahlung bekommst du weitere Infos zur Gruppe.
+  </p>
+</div>
 
   </div>
 
