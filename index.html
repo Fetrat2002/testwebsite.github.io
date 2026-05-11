@@ -90,62 +90,101 @@
       <h1>Willkommen 👋</h1>
       <p>Wähle eine Option aus:</p>
 
-      <button onclick="showSection('kontakt')">Kontakt</button>
-      <button onclick="showSection('gruppe')">Ich möchte in die Gruppe</button>
-      <button onclick="showSection('Sozial')">Soziale Medien</button>
+      <button onclick="showSection('kontakt')">
+        Kontakt
+      </button>
+
+      <button onclick="showSection('gruppe')">
+        Ich möchte in die Gruppe
+      </button>
+
+      <button onclick="showSection('Sozial')">
+        Soziale Medien
+      </button>
     </div>
 
     <div id="kontakt" class="card hidden">
       <h2>Kontakt</h2>
-      <p><strong>E-Mail:</strong> deineemail@gmail.com</p>
-      <p><strong>Telefon:</strong> +49 000 000000</p>
-      <p><strong>TikTok:</strong> @deinname</p>
+
+      <p><strong>E-Mail:</strong> Fetrathazratn@gmail.com</p>
+      <p><strong>Telefon:</strong> +49 173 7219411</p>
+      <a href="https://www.tiktok.com/@fetratdaily" target="_blank">
+        TikTok Profil öffnen
+      </a>
     </div>
 
     <div id="gruppe" class="card hidden">
       <h2>Mitglied werden</h2>
+
       <p>Der Zugang zur Gruppe kostet:</p>
+
       <div class="price">20 €</div>
 
-      <button class="blue" onclick="showSection('zahlung')">Zahlen</button>
+      <button class="green" onclick="showSection('zahlung')">
+        Zahlen
+      </button>
     </div>
 
-  <div id="zahlung" class="card hidden">
-  <h2>Zahlungsoptionen</h2>
+    <div id="zahlung" class="card hidden">
+      <h2>Zahlungsoptionen</h2>
 
-  <a href="https://paypal.me/yourcentwillhelp" target="_blank">
-    Mit PayPal zahlen
-  </a>
+      <a href="https://paypal.me/yourcentwillhelp" target="_blank">
+        Mit PayPal zahlen
+      </a>
 
-  <button class="blue" onclick="showSection('bank')">
-    Banküberweisung
-  </button>
+      <button class="green" onclick="showSection('bank')">
+        Banküberweisung
+      </button>
 
-  <p class="small">
-    Wähle deine Zahlungsmethode aus.
-  </p>
-</div>
+      <p class="small">
+        Wähle deine Zahlungsmethode aus.
+      </p>
+    </div>
 
-<div id="bank" class="card hidden">
-  <h2>Banküberweisung</h2>
+    <div id="bank" class="card hidden">
+      <h2>Banküberweisung</h2>
 
-  <p><strong>Name:</strong> Sebghatullah Hazrat</p>
-  <p><strong>IBAN:</strong> DE00 0000 0000 0000 0000 00</p>
-  <p><strong>Betrag:</strong> 20 €</p>
-  <p><strong>Verwendungszweck:</strong> Datum + Name</p>
+      <p><strong>Name:</strong> Sebghatullah Hazrat</p>
+      <p><strong>IBAN:</strong> DE00 0000 0000 0000 0000 00</p>
+      <p><strong>Betrag:</strong> 20 €</p>
+      <p><strong>Verwendungszweck:</strong> Datum + Name</p>
 
-  <p class="small">
-    Bitte beachte, dass es mindestens ein Werktag in anspruch nimmt, bis das Geld auf dem Konto erscheint.
-  </p>
-</div>
+      <p class="small">
+        Bitte beachte, dass es mindestens ein Werktag dauert,
+        bis das Geld auf dem Konto erscheint.
+      </p>
+    </div>
+
+    <div id="Sozial" class="card hidden">
+      <h2>Soziale Medien</h2>
+
+      <a href="https://instagram.com/fetrat_h_r" target="_blank">
+        Instagram
+      </a>
+
+      <a href="https://tiktok.com/@fetratdaily" target="_blank">
+        TikTok
+      </a>
+
+      <a href="https://youtube.com/" target="_blank">
+        YouTube
+      </a>
+
+      <p class="small">
+        Hier kannst du später deine echten Links einsetzen.
+      </p>
+    </div>
 
   </div>
 
   <script>
     function showSection(id) {
+
       document.getElementById("kontakt").classList.add("hidden");
       document.getElementById("gruppe").classList.add("hidden");
+      document.getElementById("zahlung").classList.add("hidden");
       document.getElementById("bank").classList.add("hidden");
+      document.getElementById("Sozial").classList.add("hidden");
 
       document.getElementById(id).classList.remove("hidden");
     }
