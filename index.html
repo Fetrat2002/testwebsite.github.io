@@ -1,167 +1,268 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fetrat</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fetrat | Links & Kontakt</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
-      background: #cfefff;
+      background: linear-gradient(135deg, #dff4ff, #f8fbff);
       color: #111827;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
     }
 
     .container {
-      max-width: 500px;
-      margin: 80px auto;
-      padding: 20px;
+      width: 100%;
+      max-width: 520px;
     }
 
-    .card {
-      background: white;
+    .profile-card,
+    .content-card {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 26px;
+      box-shadow: 0 18px 45px rgba(17, 24, 39, 0.12);
       padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      margin-bottom: 25px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .profile-card {
+      margin-bottom: 18px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #5b4636, #a9825f);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: bold;
+      box-shadow: 0 10px 25px rgba(91, 70, 54, 0.35);
     }
 
     h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-      color: #111827;
+      font-size: 38px;
+      margin: 0 0 8px;
     }
 
-    p {
-      font-size: 18px;
-      color: #374151;
+    .subtitle {
+      font-size: 17px;
+      color: #4b5563;
+      margin: 0 0 24px;
+      line-height: 1.5;
     }
 
-    button, a {
-      display: block;
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    button,
+    a.link-button {
       width: 100%;
-      margin: 14px 0;
-      padding: 16px;
-      border-radius: 14px;
       border: none;
+      border-radius: 16px;
+      padding: 15px 14px;
       background: #5b4636;
       color: white;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
       text-decoration: none;
       cursor: pointer;
-      box-sizing: border-box;
-      transition: 0.3s;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
-    button:hover, a:hover {
+    button:hover,
+    a.link-button:hover {
       background: #6d5644;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(91, 70, 54, 0.22);
     }
 
-    .hidden {
+    button.active {
+      background: #111827;
+    }
+
+    .content-card {
       display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .content-card.show {
+      display: block;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 26px;
+    }
+
+    .contact-box {
+      background: #f3f4f6;
+      border-radius: 18px;
+      padding: 16px;
+      margin: 12px 0;
+      text-align: left;
+    }
+
+    .contact-box span {
+      display: block;
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .contact-box strong {
+      font-size: 16px;
+      color: #111827;
+      word-break: break-word;
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
     }
 
     .small {
       font-size: 14px;
       color: #6b7280;
-      margin-top: 10px;
+      margin-top: 18px;
+      line-height: 1.5;
     }
 
+    footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 13px;
+      margin-top: 16px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 520px) {
+      body {
+        align-items: flex-start;
+        padding: 18px;
+      }
+
+      .profile-card,
+      .content-card {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .menu {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <main class="container">
+    <section class="profile-card">
+      <div class="avatar">F</div>
 
-  <div class="container">
+      <h1>Fetrat</h1>
+      <p class="subtitle">
+        Willkommen auf meiner persönlichen Seite. Hier findest du meine sozialen Medien, Kontaktmöglichkeiten und Unterstützungsmöglichkeiten.
+      </p>
 
-    <div class="card">
+      <div class="menu">
+        <button id="btn-social" class="active" onclick="showSection('social')">📱 Social</button>
+        <button id="btn-kontakt" onclick="showSection('kontakt')">✉️ Kontakt</button>
+        <button id="btn-spenden" onclick="showSection('spenden')">❤️ Spenden</button>
+      </div>
+    </section>
 
-      <h1>Willkommen 👋</h1>
-
-      <p>Danke, dass du da bist.</p>
-
-      <button onclick="showSection('social')">
-        Soziale Medien
-      </button>
-
-      <button onclick="showSection('kontakt')">
-        Kontakte
-      </button>
-
-      <button onclick="showSection('spenden')">
-        Spenden
-      </button>
-
-    </div>
-
-    <div id="kontakt" class="card hidden">
-
-      <h2>Kontakte</h2>
-
-      <p><strong>E-Mail:</strong> Fetrathazratn@gmail.com</p>
-
-      <p><strong>Telefon:</strong> +49 173 7219411</p>
-
-    </div>
-
-    <div id="social" class="card hidden">
-
+    <section id="social" class="content-card show">
       <h2>Soziale Medien</h2>
 
-      <a href="https://instagram.com/fetrat_h_r" target="_blank">
-        Instagram
-      </a>
+      <div class="links">
+        <a class="link-button" href="https://instagram.com/fetrat_h_r" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="link-button" href="https://tiktok.com/@fetratdaily" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a class="link-button" href="https://youtube.com/@FetratSportsIQ" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a class="link-button" href="https://www.linkedin.com/in/fetratullah-rasuly-3ba9b0357" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
 
-      <a href="https://tiktok.com/@fetratdaily" target="_blank">
-        TikTok
-      </a>
+      <p class="small">Folge mir für mehr Content und Updates 😄</p>
+    </section>
 
-      <a href="https://youtube.com/@FetratSportsIQ" target="_blank">
-        YouTube
-      </a>
+    <section id="kontakt" class="content-card">
+      <h2>Kontakt</h2>
 
-      <a href="https://www.linkedin.com/in/fetratullah-rasuly-3ba9b0357" target="_blank">
-        LinkedIn
-      </a>
+      <div class="contact-box">
+        <span>E-Mail</span>
+        <strong>Fetrathazratn@gmail.com</strong>
+      </div>
 
-      <p class="small">
-        Folge mir für mehr Content 😄
-      </p>
+      <div class="contact-box">
+        <span>Telefon</span>
+        <strong>+49 173 7219411</strong>
+      </div>
+    </section>
 
-    </div>
-
-    <div id="spenden" class="card hidden">
-
+    <section id="spenden" class="content-card">
       <h2>Spenden</h2>
 
-      <a href="https://paypal.me/yourcentwillhelp" target="_blank">
-        Mit PayPal spenden
-      </a>
+      <div class="links">
+        <a class="link-button" href="https://paypal.me/yourcentwillhelp" target="_blank" rel="noopener noreferrer">Mit PayPal spenden</a>
+      </div>
 
-      <p class="small">
-        Danke für deine Unterstützung ❤️
-      </p>
+      <p class="small">Danke für deine Unterstützung. Jede Hilfe bedeutet mir viel ❤️</p>
+    </section>
 
-    </div>
-
-  </div>
+    <footer>
+      © 2026 Fetrat
+    </footer>
+  </main>
 
   <script>
-
     function showSection(id) {
+      const sections = ["social", "kontakt", "spenden"];
 
-      document.getElementById("kontakt").classList.add("hidden");
-      document.getElementById("social").classList.add("hidden");
-      document.getElementById("spenden").classList.add("hidden");
+      sections.forEach(section => {
+        document.getElementById(section).classList.remove("show");
+        document.getElementById("btn-" + section).classList.remove("active");
+      });
 
-      document.getElementById(id).classList.remove("hidden");
+      document.getElementById(id).classList.add("show");
+      document.getElementById("btn-" + id).classList.add("active");
     }
-
   </script>
-
 </body>
 </html>
